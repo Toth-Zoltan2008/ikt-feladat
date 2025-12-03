@@ -1,0 +1,43 @@
+    .box {
+        width: 260px;
+        height: 260px;
+        border: 6px solid white;
+        position: relative;
+        overflow: hidden;
+        background-color: black;
+    }
+    .soul {
+        width: 26px;
+        height: 26px;
+        background: #00aaff;
+        position: absolute;
+        bottom: 20px;
+        left: calc(50% - 13px);
+        transform: rotate(45deg);
+        animation: jumpslam 1.6s infinite;
+        z-index: 10;
+    }
+    .soul::before, .soul::after {
+        content: "";
+        width: 26px;
+        height: 26px;
+        background: #00aaff;
+        border-radius: 50%;
+        position: absolute;
+    }
+    .soul::before { top: -13px; left: 0; }
+    .soul::after { left: -13px; top: 0; }
+    @keyframes jumpslam {
+        0%   { transform: translateY(0) rotate(45deg); }
+        10%  { transform: translateY(-100px) rotate(45deg); }
+        20%  { transform: translateY(-100px) rotate(45deg); }
+        30%  { transform: translateY(0px) rotate(45deg); }
+        40%  { transform: translateY(50) rotate(45deg); }
+        50% { transform: translateY(50) rotate(45deg); }
+        60%   { transform: translatex(0) rotate(125deg); }
+        70%  { transform: translatex(-100px) rotate(125deg); }
+        80%  { transform: translatex(-100px) rotate(125deg); }
+        90%  { transform: translatex(0px) rotate(125deg); }
+        95%  { transform: translatex(50) rotate(125deg); }
+        100% { transform: translateX(50) rotate(125deg); }
+    }
